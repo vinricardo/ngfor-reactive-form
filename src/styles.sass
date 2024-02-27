@@ -1,0 +1,23 @@
+form
+    display: grid
+    grid-template-columns: auto auto
+    gap: 1rem
+input, select
+    appearance: none
+    color: #47B24C
+    &, option
+        font-weight: 600
+    &:focus
+        outline: #47B24C solid .125rem
+    &:first-child
+        grid-column: span 2
+    padding: .6875rem 1.0625rem
+    border-radius: .3125rem
+    border: #999999 .0625rem solid
+select
+    background: url(./assets/icons/arrow-select.svg) no-repeat 100%
+    &:focus
+        background: url(./assets/icons/arrow-select-focus.svg) no-repeat 100%
+
+    //#999999
+    //#47B24C

@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+  @for (formControl of fields; track $index) { @switch (formControl.type) {
+  @case (FieldType.SELECT) {
+  <select
+    [class]="formControl.class"
+    [formControlName]="formControl.formControlName"
+  >
+    <option value="null" selected disabled>
+      {{ formControl.placeholder }}
+    </option>
+    @for (option of formControl.options; track $index){
+      <option [value]="option.value">{{option.title}}</option>
+    }
+  </select>
+  } @default {
+  <input
+    [type]="formControl.type"
+    [class]="formControl.class"
+    [formControlName]="formControl.formControlName"
+    [placeholder]="formControl.placeholder"
+  />
+  } } }
+</form>
